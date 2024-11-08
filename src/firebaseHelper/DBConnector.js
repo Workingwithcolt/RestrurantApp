@@ -57,7 +57,7 @@ class ApiInterface {
                 let startIndex = paginationStarting > 0 ? paginationStarting : 1;
                 const lastDataQuery = query(this.collectionRef, ...whereArray, orderBy(options.orderBy));
                 const lastDataSnapshot = await getDocs(lastDataQuery);
-                const lastQueryIndex = lastDataSnapshot.docs[startIndex];
+                const lastQueryIndex = lastDataSnapshot.docs[startIndex] ? lastDataSnapshot.docs[startIndex] : 1;
 
                 const currentSnapshot = query(this.collectionRef, ...whereArray, orderBy(options.orderBy), startAfter(lastQueryIndex), limit(options.limit));
                 const data = await getDocs(currentSnapshot);
