@@ -54,7 +54,7 @@ class ApiInterface {
 
                 let paginationStarting = options.cursor - FETCHING_ITEMS_LIMIT;
 
-                let startIndex = paginationStarting > 0 ? paginationStarting : 0;
+                let startIndex = paginationStarting > 0 ? paginationStarting : 1;
                 const lastDataQuery = query(this.collectionRef, ...whereArray, orderBy(options.orderBy));
                 const lastDataSnapshot = await getDocs(lastDataQuery);
                 const lastQueryIndex = lastDataSnapshot.docs[startIndex];

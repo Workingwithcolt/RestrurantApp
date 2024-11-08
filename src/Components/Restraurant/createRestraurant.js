@@ -1,6 +1,6 @@
 import { serviceHelpers } from '../../Helpers/ServiceHelpers';
 import { restraurantProps } from '../../Helpers/ExtraProperties';
-import { NEW_PRODUCTS, UPDATE_ON_RESTAURENT } from '../../Helpers/ConstantProperties';
+import { NEW_PRODUCTS, RESTAURENT, UPDATE_ON_RESTAURENT } from '../../Helpers/ConstantProperties';
 import GenericForm from '../GenericComponents/FormComponent/GenericForm';
 import { GenericErrorComponent, GenericSuccessComponent } from '../GenericComponents/FormComponent/GenericAlertComponent';
 import { GenericVerifyComponent } from '../GenericComponents/VerifyComponent/FirmVerifyComponent';
@@ -18,7 +18,7 @@ const CreateRestraurant = () => {
         propertyList: restraurantProps,
         queryFunction: queryFunction,
         queryKeyValue: invalidateQueryKey,
-        navigateTo: NEW_PRODUCTS,
+        navigateTo: "/",
         ErrorComponent: ({ error }) => <GenericErrorComponent error={error} />,
         SuccessComponent: ({ data }) => <GenericSuccessComponent data={data} message={successMessage} />,
         addButtonText: "Add",
